@@ -1,6 +1,7 @@
 require File.expand_path '../../spec_helper.rb', __FILE__
-# require './spec/spec_helper'
+# require './lib/video_microservice.rb'
 RSpec.describe 'Microservice Response' do
+
   it 'should return all sad videos' do
     get '/sad'
 
