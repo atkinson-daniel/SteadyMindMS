@@ -5,3 +5,8 @@ gem 'faraday'
 gem 'fast_jsonapi'
 gem 'pry'
 gem 'json'
+
+group :test do
+  gem 'rack-test'
+  gem 'rspec'
+end
