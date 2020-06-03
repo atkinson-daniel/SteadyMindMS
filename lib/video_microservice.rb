@@ -1,5 +1,4 @@
-require 'sinatra'
-require "sinatra/namespace"
+require "./config/environment.rb"
 
 before do
   content_type 'application/json'
