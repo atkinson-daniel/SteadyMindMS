@@ -24,3 +24,13 @@ get '/happy' do
 
   VideoSerializer.new(videos).serialized_json
 end
+
+get '/neutral' do
+  playlist_items = YouTubeService.get_playlist_items('PL2gVg27Uw-kcv9hsbiRXBQQGKg0h3k0kv')[:items]
+
+  videos = playlist_items.map.with_index(1) do |item, index|
+    Video.new(item, index)
+  end
+
+  VideoSerializer.new(videos).serialized_json
+end
