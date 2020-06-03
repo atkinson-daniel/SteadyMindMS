@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.describe 'Video Microservice' do
   include Rack::Test::Methods
   it 'can return sad videos', :vcr do
-    get '/sad'
+    get 'api/v1/sad'
 
     videos = JSON.parse(last_response.body, symbolize_names: true)
     first_video = videos[:data].first
@@ -16,7 +16,7 @@ RSpec.describe 'Video Microservice' do
   end
 
   it 'can return happy videos', :vcr do
-    get '/happy'
+    get 'api/v1/happy'
 
     videos = JSON.parse(last_response.body, symbolize_names: true)
     first_video = videos[:data].first
@@ -29,7 +29,7 @@ RSpec.describe 'Video Microservice' do
   end
 
   it 'can return neutral videos', :vcr do
-    get '/neutral'
+    get 'api/v1/neutral'
 
     videos = JSON.parse(last_response.body, symbolize_names: true)
     first_video = videos[:data].first
