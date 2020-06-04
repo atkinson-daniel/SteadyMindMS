@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe 'Video Microservice' do
-  include Rack::Test::Methods
   it 'can return sad videos', :vcr do
     get 'api/v1/sad'
 
